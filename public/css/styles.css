@@ -1,0 +1,10 @@
+input, select {
+    display: block;
+    margin-left: 1%;
+    margin-top: 0.2%;
+}
+
+th, td {
+    width: 15.5%;
+    text-align: center;
+}

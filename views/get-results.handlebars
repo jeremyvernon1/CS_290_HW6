@@ -1,0 +1,31 @@
+<h1>You sent the following data in a GET request:</h1>
+    <table><h5>Url Passed Parameters</h5>
+    {{#each dataList}}
+        <tr>
+            <th>
+                Entry
+            </th>
+                <td>{{this.name}}</td>
+                <td>{{this.value}}</td>
+        </tr>
+    {{/each}}
+    </table>
+
+<style>
+    table {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    table, tr, th, td {
+        border: 1px black solid;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        width: 125px;
+        height: 25px;
+        text-align: center;
+    }
+
+</style>

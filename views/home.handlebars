@@ -1,0 +1,64 @@
+<!-- form for a new entry -->
+<div id="form">
+    <form action="http://localhost:3000/insert" method="get">
+        <fieldset>
+            <legend>Log a new session:</legend><br />
+            <label>Name:
+                <input type="text" id="newExerciseName" name="newExerciseName" />
+            </label><br />
+            <label>Reps:
+                <input type="number" id="newExerciseReps" name="newExerciseReps" />
+            </label><br />
+            <label>Weight:
+                <input type="number" name="newExerciseWeight" />
+            </label><br />
+            <label>Unit:
+                <select name="newExerciseUnit">
+                    <option value="lbs">lbs</option>
+                    <option value="kgs">kgs</option>
+                </select>
+            </label><br />
+            <label>Date:
+                <input type="date" name="newExerciseDate" />
+            </label><br /><br />
+            <button id="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+<br /><hr /><br />
+
+<!-- table displaying the results -->
+<div id="completed">
+    <table id="exerciseLog">
+
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Unit</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+        {{#each dataList}}
+            <td>{{this.value}}</td>
+        {{/each}}
+            <td><input type="button" value="edit" onclick="location.href = '/simple-update';" /></td>
+            <td><input type="button" value="delete" onclick="deleteRow('dataTable',this)" /></td>
+        </tr>
+
+        <tr>
+            <td>{{results}}</td>
+        </tr>
+
+        <tr>
+            {{getData}}
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+<script src="js\pageScript.js"></script>
